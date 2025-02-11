@@ -70,6 +70,39 @@
     font-weight: bold;
 }
 
+.login-popup-container button {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.login-popup-container button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.login-popup-container button:active {
+    background-color: #3d8b40;
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.login-popup-container button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5);
+}
+
 @keyframes fade-in {
     from {
         opacity: 0;

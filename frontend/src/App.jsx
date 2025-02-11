@@ -27,8 +27,8 @@ const App = () => {
       />
       <Routes>
         <Route path='/' element={<Home/>}></Route>
-        <Route path='/cart' element={isLoggedIn ? <Cart/> : <Home/>}></Route>
-        <Route path='/order' element={isLoggedIn ? <PlaceOrder/> : <Home/>}></Route>
+        <Route path='/cart' element={<Cart/>}></Route>
+                <Route path='/order' element={isLoggedIn ? <PlaceOrder/> : <Home/>}></Route>
       </Routes>
     </div>
     <Footer/>
