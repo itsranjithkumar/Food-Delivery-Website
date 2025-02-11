@@ -7,26 +7,25 @@ export const StoreContextProvider = (props) => {
 
     const [cartItems, setCartItems] = useState({});
 
-    const addToCart = (itemId) => {
-        if(!cartItems[itemId]){
-            setCartItems((prev) => ({
-                ...prev, 
-                [itemId]: 1
-            }));
-        }
-        else{
-            setCartItems((prev) => ({
-                ...prev, 
-                [itemId]: (prev[itemId] || 0) + 1
-            }));
-        }
+    const addToCart = (item) => {
+        const itemId = item.id || item._id;
+        setCartItems((prev) => ({
+            ...prev, 
+            [itemId]: (prev[itemId] || 0) + 1
+        }));
     }
 
-    const removeFromCart = (itemId) => {
-        setCartItems((prev) => ({
-            ...prev,
-            [itemId]: (prev[itemId] || 0) - 1
-        }));
+    const removeFromCart = (item) => {
+        const itemId = item.id || item._id;
+        setCartItems((prev) => {
+            const newCartItems = {...prev};
+            if (newCartItems[itemId] > 1) {
+                newCartItems[itemId] -= 1;
+            } else {
+                delete newCartItems[itemId];
+            }
+            return newCartItems;
+        });
     }
 
     useEffect(() => {
